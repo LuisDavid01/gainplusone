@@ -137,7 +137,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className=" font-bold text-xl mb-4">Community Support</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Connect with like-minded fitness enthusiasts, share your progress, and get motivated by others'
+                  Connect with like-minded fitness enthusiasts, share your progress, and get motivated by others
                   success stories.
                 </p>
               </CardContent>
