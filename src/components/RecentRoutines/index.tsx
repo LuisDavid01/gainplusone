@@ -41,9 +41,9 @@ const difficultyColors = {
 
 export function RecentRoutines() {
   return (
-    <Card className="bg-white shadow-sm">
+    <Card className="bg-card shadow-sm">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-xl font-bold text-gray-900 ">Rutinas Recientes</CardTitle>
+        <CardTitle className="text-xl font-bold  ">Rutinas Recientes</CardTitle>
         <Button variant="outline" size="sm">
           Ver todas
         </Button>
@@ -52,16 +52,16 @@ export function RecentRoutines() {
         {routines.map((routine) => (
           <div
             key={routine.id}
-            className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between p-4 border border-gray-200 rounded-lg "
           >
             <div className="flex-1">
               <div className="flex items-center space-x-3 mb-2">
-                <h3 className="font-semibold text-gray-900">{routine.name}</h3>
+                <h3 className="font-semibold ">{routine.name}</h3>
                 <Badge className={`text-xs ${difficultyColors[routine.difficulty as keyof typeof difficultyColors]}`}>
                   {routine.difficulty}
                 </Badge>
               </div>
-              <div className="flex items-center space-x-4 text-sm text-gray-600">
+              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
                   <Clock className="h-4 w-4" />
                   <span>{routine.duration}</span>

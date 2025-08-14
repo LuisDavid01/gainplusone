@@ -15,7 +15,7 @@ export function RoutineReview({ routineData }: RoutineReviewProps) {
   const totalSets = routineData.exercises.reduce((sum, exercise) => sum + (exercise.sets ?? 0), 0)
 
   return (
-    <Card className="bg-white shadow-sm">
+    <Card className="bg-card shadow-sm">
       <CardHeader>
         <CardTitle className="text-2xl font-bold text-gray-900 ">Revisar Rutina</CardTitle>
         <p className="text-gray-600">Verifica todos los detalles antes de guardar tu rutina</p>

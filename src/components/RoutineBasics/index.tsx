@@ -30,9 +30,9 @@ export function RoutineBasics({ routineData, setRoutineData }: RoutineBasicsProp
   }
 
   return (
-    <Card className="bg-white shadow-sm">
+    <Card className="bg-card shadow-sm">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold text-gray-900 ">Información Básica</CardTitle>
+        <CardTitle className="text-2xl font-bold ">Información Básica</CardTitle>
         <p className="text-gray-600">Define los detalles principales de tu rutina</p>
       </CardHeader>
       <CardContent className="space-y-6">

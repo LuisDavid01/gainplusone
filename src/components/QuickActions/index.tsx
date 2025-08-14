@@ -36,9 +36,9 @@ const actions = [
 
 export function QuickActions() {
   return (
-    <Card className="bg-white shadow-sm">
+    <Card className="bg-card shadow-sm">
       <CardHeader>
-        <CardTitle className="text-xl font-bold text-gray-900 ">Acciones Rápidas</CardTitle>
+        <CardTitle className="text-xl font-bold  ">Acciones Rápidas</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
         {actions.map((action) => (
@@ -53,8 +53,8 @@ export function QuickActions() {
                 <action.icon className="h-4 w-4 text-white" />
               </div>
               <div className="text-left">
-                <div className="font-medium text-gray-900">{action.title}</div>
-                <div className="text-sm text-gray-600">{action.description}</div>
+                <div className="font-medium ">{action.title}</div>
+                <div className="text-sm text-foreground-muted">{action.description}</div>
               </div>
             </Link>
           </Button>

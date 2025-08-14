@@ -7,6 +7,7 @@ import { UserButton } from "@clerk/nextjs"
 import { Bell, Settings, LogOut, Dumbbell } from "lucide-react"
 import { Button } from "../ui/button"
 import Link from "next/link"
+import ThemeToggle from "../ThemeToogle"
 
 
 export  function  DashboardHeader() {
@@ -15,7 +16,7 @@ export  function  DashboardHeader() {
  
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="bg-background shadow-sm border-b border-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo and Welcome */}
@@ -31,10 +32,11 @@ export  function  DashboardHeader() {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" size="sm" className="">
               <Bell className="h-5 w-5" />
             </Button>
             <UserButton/>
+            <ThemeToggle/>
           </div>
         </div>
       </div>

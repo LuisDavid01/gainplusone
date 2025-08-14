@@ -37,15 +37,15 @@ export function StatsCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {stats.map((stat) => (
-        <Card key={stat.name} className="bg-white shadow-sm hover:shadow-md transition-shadow">
+        <Card key={stat.name} className="bg-card shadow-sm hover:shadow-md transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">{stat.name}</p>
-                <p className="text-2xl font-bold text-gray-900 ">{stat.value}</p>
-                <p className="text-xs text-gray-500 mt-1">{stat.change}</p>
+                <p className="text-sm font-medium text-muted-foreground">{stat.name}</p>
+                <p className="text-2xl font-bold text-muted-foreground ">{stat.value}</p>
+                <p className="text-xs text-muted-foreground mt-1">{stat.change}</p>
               </div>
-              <div className={`p-3 rounded-full bg-gray-50 ${stat.color}`}>
+              <div className={`p-3 rounded-full bg-card ${stat.color}`}>
                 <stat.icon className="h-6 w-6" />
               </div>
             </div>

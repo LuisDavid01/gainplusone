@@ -8,13 +8,13 @@ import { currentUser } from "@clerk/nextjs/server"
 export default async function DashboardPage() {
   const user = await currentUser()
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <DashboardHeader />
 
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold text-gray-900 ">¡Hola, {user?.firstName}!</h1>
-              <p className="text-sm text-gray-600">Listo para entrenar hoy</p>
+              <h1 className="text-2xl font-bold  ">¡Hola, {user?.firstName}!</h1>
+              <p className="text-sm ">Listo para entrenar hoy</p>
             </div>
         <div className="px-4 py-6 sm:px-0">
           {/* Stats Cards */}
