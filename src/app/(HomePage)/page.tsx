@@ -47,13 +47,13 @@ export default function LandingPage() {
                                   return redirect("/sign-up");
                               }
               
-                              //return redirect("/drive");
+                              return redirect("/dashboard");
                               }}
                           >
                               <Button
-                              size="lg"
+                              
                               type="submit"
-                              className="text-lg px-8 py-6"
+                              className="sm:w-full text-lg px-8 py-6"
                               >
                               Start for free
                               </Button>
@@ -200,6 +200,10 @@ export default function LandingPage() {
                     <CheckCircle className="h-5 w-5 text-primary" />
                     <span>Community access</span>
                   </li>
+                   <li className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <span>5 free AI assited workouts</span>
+                  </li>
                 </ul>
                  <form
                               action={async () => {
@@ -211,7 +215,7 @@ export default function LandingPage() {
                                   return redirect("/sign-up");
                               }
               
-                              //return redirect("/drive");
+                              return redirect("/dashboard");
                               }}
                           >
                               <Button
@@ -250,7 +254,7 @@ export default function LandingPage() {
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
-                    <span>AI-powered recommendations</span>
+                    <span>Unlimited AI-powered recommendations</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 text-primary" />
@@ -276,7 +280,7 @@ export default function LandingPage() {
                                   return redirect("/sign-up");
                               }
               
-                              //return redirect("/drive");
+                              return redirect("/dashboard");
                               }}
                           >
                               <Button
@@ -312,14 +316,14 @@ export default function LandingPage() {
                                   return redirect("/sign-up");
                               }
               
-                              //return redirect("/drive");
+                              return redirect("/dashboard");
                               }}
                           >
                               <Button
                               size="lg"
-                              variant="outline"
                               type="submit"
-                              className="text-lg px-8 py-6"
+                          variant="outline"
+                          className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-foreground bg-transparent"
                               >
                               Start Your Free Journey
                               </Button>

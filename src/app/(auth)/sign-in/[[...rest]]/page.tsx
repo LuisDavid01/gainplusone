@@ -6,7 +6,7 @@ export default function signinPage(){
         <div className="min-h-screen bg-background">
         <MainHeader/>
         <div className="flex flex-col justify-center items-center p-20">
-            <SignIn/>
+            <SignIn forceRedirectUrl={"/dashboard"}/>
         </div>
         </div>
     )

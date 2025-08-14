@@ -4,7 +4,7 @@ import {
 } from '@clerk/nextjs'
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
-
+import { dark } from "@clerk/themes";
 export const metadata: Metadata = {
   title: "GainOne+ - Transform Your Fitness Journey",
   description:
@@ -21,7 +21,18 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+    appearance={{
+        baseTheme: dark,
+        variables:{
+          colorBackground: "#000",
+          colorInput: "#121212",
+          colorInputForeground: "white",
+          colorMutedForeground: "#fff",
+          colorPrimary: "#e25c22"
+        }
+    }}
+    >
     <html lang="en" className={`${inter.variable}`}>
       <body>{children}</body>
     </html>
