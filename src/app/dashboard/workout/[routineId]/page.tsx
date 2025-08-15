@@ -10,6 +10,7 @@ import { CheckCircle } from "lucide-react"
 import type { Exercise } from "../../routines/create/page"
 import { WorkoutHeader } from "~/components/WorkoutHeader"
 import { ExerciseTracker } from "~/components/ExerciseTracker"
+import { DashboardHeader } from "~/components/DashboardHeader"
 
 
 interface WorkoutSession {
@@ -150,7 +151,8 @@ export default function WorkoutPage() {
   const progress = (completedExercises / workoutSession.exercises.length) * 100
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
+      <DashboardHeader/>
       <WorkoutHeader
         routineName={workoutSession.routineName}
         elapsedTime={formatTime(elapsedTime)}
@@ -161,11 +163,11 @@ export default function WorkoutPage() {
 
       <main className="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         {/* Progress */}
-        <Card className="bg-white shadow-sm mb-6">
+        <Card className=" shadow-sm mb-6">
           <CardContent className="p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Progreso del Entrenamiento</h2>
-              <span className="text-sm text-gray-600">
+              <h2 className="text-lg font-semibold ">Progreso del Entrenamiento</h2>
+              <span className="text-sm text-muted-foreground">
                 {completedExercises} de {workoutSession.exercises.length} ejercicios
               </span>
             </div>
@@ -179,29 +181,29 @@ export default function WorkoutPage() {
         )}
 
         {/* Exercise List */}
-        <Card className="bg-white shadow-sm">
+        <Card className=" shadow-sm">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Lista de Ejercicios</h3>
+            <h3 className="text-lg font-semibold  mb-4">Lista de Ejercicios</h3>
             <div className="space-y-3">
               {workoutSession.exercises.map((exercise, index) => (
                 <div
                   key={exercise.id}
-                  className={`flex items-center justify-between p-4 rounded-lg border ${
+                  className={`flex items-center justify-between  p-4 rounded-lg border ${
                     exercise.completed
-                      ? "bg-green-50 border-green-200"
+                      ? " border-green-200"
                       : index === currentExerciseIndex
-                        ? "bg-orange-50 border-orange-200"
-                        : "bg-gray-50 border-gray-200"
+                        ? " border-orange-200"
+                        : " border-gray-200"
                   }`}
                 >
                   <div className="flex items-center space-x-3">
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center ${
                         exercise.completed
-                          ? "bg-green-600 text-white"
+                          ? "bg-green-600 "
                           : index === currentExerciseIndex
-                            ? "bg-orange-600 text-white"
-                            : "bg-gray-300 text-gray-600"
+                            ? "bg-orange-600 "
+                            : " text-muted-foreground"
                       }`}
                     >
                       {exercise.completed ? (
@@ -211,8 +213,8 @@ export default function WorkoutPage() {
                       )}
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{exercise.name}</p>
-                      <p className="text-sm text-gray-600">
+                      <p className="font-medium ">{exercise.name}</p>
+                      <p className="text-sm text-muted-foreground">
                         {exercise.sets} series × {exercise.reps} reps
                         {exercise.weight && exercise.weight > 0 && ` × ${exercise.weight}kg`}
                       </p>
@@ -221,7 +223,7 @@ export default function WorkoutPage() {
                   {index === currentExerciseIndex && !exercise.completed && (
                     <Button
                       size="sm"
-                      className="bg-orange-600 hover:bg-orange-700 text-white"
+                      className="bg-orange-600 hover:bg-orange-700 "
                       onClick={() => completeExercise(exercise.id)}
                     >
                       Completar
@@ -240,7 +242,7 @@ export default function WorkoutPage() {
               <CheckCircle className="h-12 w-12 text-green-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-green-900 mb-2">¡Entrenamiento Completado!</h3>
               <p className="text-green-700 mb-4">Has completado todos los ejercicios en {formatTime(elapsedTime)}</p>
-              <Button onClick={finishWorkout} className="bg-green-600 hover:bg-green-700 text-white">
+              <Button onClick={finishWorkout} className="bg-green-600 hover:bg-green-700 ">
                 Finalizar y Guardar
               </Button>
             </CardContent>

@@ -3,6 +3,7 @@
 import { Button } from "~/components/ui/button"
 import { ArrowLeft, Play, Pause, Square } from "lucide-react"
 import { useRouter } from "next/navigation"
+import { DashboardHeader } from "../DashboardHeader"
 
 interface WorkoutHeaderProps {
   routineName: string
@@ -22,24 +23,25 @@ export function WorkoutHeader({
   const router = useRouter()
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    
+    <div className=" shadow-sm border-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" onClick={() => router.push("/dashboard")} className="text-gray-600">
+            <Button variant="ghost" onClick={() => router.push("/dashboard")} className="text-muted-foreground">
               <ArrowLeft className="h-5 w-5 mr-2" />
               Salir
             </Button>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 font-serif">{routineName}</h1>
-              <p className="text-sm text-gray-600">Entrenamiento en progreso</p>
+              <h1 className="text-xl font-bold ">{routineName}</h1>
+              <p className="text-sm text-muted-foreground">Entrenamiento en progreso</p>
             </div>
           </div>
 
           <div className="flex items-center space-x-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-orange-600 font-mono">{elapsedTime}</div>
-              <div className="text-xs text-gray-600">Tiempo transcurrido</div>
+              <div className="text-2xl font-bold text-orange-600 ">{elapsedTime}</div>
+              <div className="text-xs text-muted-foreground">Tiempo transcurrido</div>
             </div>
 
             <div className="flex items-center space-x-2">
@@ -59,6 +61,6 @@ export function WorkoutHeader({
           </div>
         </div>
       </div>
-    </header>
+    </div>
   )
 }

@@ -112,9 +112,9 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
     <div className="space-y-6">
       {/* Selected Exercises */}
       {routineData.exercises.length > 0 && (
-        <Card className="bg-white shadow-sm">
+        <Card className="shadow-sm">
           <CardHeader>
-            <CardTitle className="text-xl font-bold text-gray-900 ">
+            <CardTitle className="text-xl font-bold  ">
               Ejercicios Seleccionados ({routineData.exercises.length})
             </CardTitle>
           </CardHeader>
@@ -125,10 +125,10 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
                 className="flex items-center justify-between p-4 border border-gray-200 rounded-lg"
               >
                 <div className="flex-1">
-                  <h4 className="font-semibold text-gray-900">{exercise.name}</h4>
+                  <h4 className="font-semibold ">{exercise.name}</h4>
                   <div className="flex items-center space-x-4 mt-2">
                     <div className="flex items-center space-x-2">
-                      <Label className="text-xs text-gray-600">Series:</Label>
+                      <Label className="text-xs text-muted-foreground">Series:</Label>
                       <Input
                         type="number"
                         value={exercise.sets ?? 3}
@@ -138,7 +138,7 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
                       />
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Label className="text-xs text-gray-600">Reps:</Label>
+                      <Label className="text-xs text-muted-foreground">Reps:</Label>
                       <Input
                         type="number"
                         value={exercise.reps ?? 10}
@@ -148,7 +148,7 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
                       />
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Label className="text-xs text-gray-600">Peso (kg):</Label>
+                      <Label className="text-xs text-muted-foreground">Peso (kg):</Label>
                       <Input
                         type="number"
                         value={exercise.weight ?? 0}
@@ -174,12 +174,12 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
       )}
 
       {/* Exercise Library */}
-      <Card className="bg-white shadow-sm">
+      <Card className="shadow-sm">
         <CardHeader>
-          <CardTitle className="text-xl font-bold text-gray-900 ">Biblioteca de Ejercicios</CardTitle>
+          <CardTitle className="text-xl font-bold  ">Biblioteca de Ejercicios</CardTitle>
           <div className="flex items-center space-x-4 mt-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2  h-4 w-4" />
               <Input
                 placeholder="Buscar ejercicios..."
                 value={searchTerm}
@@ -203,17 +203,17 @@ export function ExerciseSelector({ routineData, setRoutineData }: ExerciseSelect
                 {filteredExercises.map((exercise) => (
                   <div
                     key={exercise.id}
-                    className="flex items-center justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50"
+                    className="flex items-center justify-between p-4 border border-gray-200 rounded-lg "
                   >
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
                         <Dumbbell className="h-5 w-5 text-orange-600" />
-                        <h4 className="font-semibold text-gray-900">{exercise.name}</h4>
+                        <h4 className="font-semibold ">{exercise.name}</h4>
                         <Badge variant="secondary" className="text-xs">
                           {exercise.difficulty}
                         </Badge>
                       </div>
-                      <div className="flex items-center space-x-4 text-sm text-gray-600">
+                      <div className="flex items-center space-x-4 text-sm text-muted-foreground">
                         <span>Músculos: {exercise.muscleGroups.join(", ")}</span>
                         <span>•</span>
                         <span>Equipo: {exercise.equipment}</span>

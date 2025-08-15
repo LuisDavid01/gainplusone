@@ -21,7 +21,7 @@ export default function WorkoutHistoryPage() {
   const router = useRouter()
 
   useEffect(() => {
-    const savedWorkouts = JSON.parse(localStorage.getItem("wellnessfit_workouts") || "[]")
+    const savedWorkouts = JSON.parse(localStorage.getItem("wellnessfit_workouts") ?? "[]")
     setWorkouts(savedWorkouts.map((w: any) => ({ ...w, startTime: new Date(w.startTime) })))
   }, [])
 

@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation"
 import { RoutineBasics } from "~/components/RoutineBasics"
 import { ExerciseSelector } from "~/components/ExcerciseSelector"
 import { RoutineReview } from "~/components/RoutineReview"
+import { DashboardHeader } from "~/components/DashboardHeader"
 
 const steps = [
   { id: 1, name: "Información Básica", component: RoutineBasics },
@@ -79,28 +80,29 @@ export default function CreateRoutine(){
 
   return (
     <div className="min-h-screen bg-background">
+      <DashboardHeader/>
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
+      <div className=" shadow-sm ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-4">
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" onClick={() => router.push("/dashboard")} className="text-gray-600">
+              <Button variant="ghost" onClick={() => router.push("/dashboard")} className="text-muted-foreground">
                 <ArrowLeft className="h-5 w-5 mr-2" />
                 Volver al Dashboard
               </Button>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900 font-serif">Crear Nueva Rutina</h1>
-                <p className="text-sm text-gray-600">
+                <h1 className="text-2xl font-bold text-text-primary ">Crear Nueva Rutina</h1>
+                <p className="text-sm text-muted-foreground">
                   Paso {currentStep} de {steps.length}: {currentStepData?.name}
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Progress Bar */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Progress value={progress} className="h-2" />
         </div>
